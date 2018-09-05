@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "graphene_django",
     "notes",
     "corsheaders",
     "rest_framework",
@@ -127,8 +128,9 @@ from rest_framework.authentication import (BasicAuthentication,
                                            TokenAuthentication)
 
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES":
-    ["rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ],
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
