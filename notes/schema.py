@@ -9,14 +9,14 @@ class PersonalNote(DjangoObjectType):
         model = PersonalNoteModel
 
         # Describe the data as a node in a graph for GraphQL
-        interface = (graphene.relay.Node,)
+        interfaces = (graphene.relay.Node, )
 
 
 class Query(graphene.ObjectType):
     """Describe which records we want to show"""
-    notes = graphene.List(PersonalNote)
+    personalnotes = graphene.List(PersonalNote)
 
-    def resolve_notes(self, info):
+    def resolve_personalnotes(self, info):
         """Decide what notes to return."""
         user = info.context.user
 
