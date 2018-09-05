@@ -139,3 +139,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'  # dir.file.varname
+}
